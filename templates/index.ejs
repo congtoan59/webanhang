@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head.ejs')%>
+        <style>
+            
+            .gameItem {
+                background-color: rgb(234, 234, 234);
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                box-shadow: 5px 10px 10px #e8f5ee;
+                height: 150px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .gameItem img {
+                max-height: 90px;
+
+            }
+
+            .unmatched {
+                background-color: rgb(240, 83, 83);
+            }
+
+            .row {
+                display: flex;
+                justify-content: center;
+            }
+        </style>
+</head>
+
+<body>
+    <main class="container">
+        <header class="row">
+            <%- include('partials/header.ejs')%>
+        </header>
+
+
+        <div id="app">
+            <section class="row" id="board">
+            
+            </section>
+            <section class="row">
+                <div class="col" id="reset">
+                    <hr>
+                    <button class="btn btn-primary" id="reset">Reset</button>
+                    <button id="cancel" onclick="back()" class="btn btn-danger">Cancel</button>
+                </div>
+            </section>
+        </div>
+
+
+        <footer class="row">
+            <%- include('partials/foot.ejs')%>
+        </footer>
+    </main>
+    <script src="assets/main.bundle.js"></script>
+    <script
+        src="assets/vendors-node_modules_autobind-decorator_lib_esm_index_js-node_modules_class-validator_esm5_de-157a7d.bundle.js"></script>
+    <script
+        src="assets/vendors-node_modules_autobind-decorator_lib_esm_index_js-node_modules_css-loader_dist_runtime-efc508.bundle.js"></script>
+    <script
+        src="assets/vendors-node_modules_autobind-decorator_lib_esm_index_js-node_modules_lodash_lodash_js.bundle.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <%- include('partials/footer.ejs')%>
+    <script>
+        function back() {
+            location.assign("/login")
+        }
+    </script>
+</body>
+
+</html>
